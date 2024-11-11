@@ -46,8 +46,8 @@ class LaneServoingNode(DTROS):
         w, h = 640, 480
 
         # TODO: you can play with these values to modify the horizontal field-of-view of the agent
-        left = 0.1
-        right = 0.1
+        left = 0.05
+        right = 0.05
         self._roi = (int(left * w), int(right * w))
 
         self.VLS_ACTION = None
