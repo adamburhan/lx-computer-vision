@@ -45,9 +45,18 @@ class LaneServoingNode(DTROS):
 
         w, h = 640, 480
 
+        # rosparams 
+        rospy.set_param('scale_left', 0.001)
+        rospy.set_param('scale_right', 0.001)
+        rospy.set_param('sigma', 3)
+        rospy.set_param('white_low', [0, 0, 50])
+        rospy.set_param('white_high', [179, 90, 255])
+        rospy.set_param('yellow_low', [10, 90, 40])
+        rospy.set_param('yellow_high', [70, 255, 255])
+
         # TODO: you can play with these values to modify the horizontal field-of-view of the agent
-        left = 0.05
-        right = 0.05
+        left = 0.1
+        right = 0.1
         self._roi = (int(left * w), int(right * w))
 
         self.VLS_ACTION = None
